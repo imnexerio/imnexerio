@@ -1,10 +1,8 @@
 name: Update README
-
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day (fixed syntax)
   workflow_dispatch:  # Allows manual triggering
-
 jobs:
   update-readme:
     name: Update Profile README
@@ -14,7 +12,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-
       - name: Generate Snake Animation
         uses: Platane/snk@v3
         with:
@@ -22,7 +19,6 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-
       - name: Push Snake Animation
         uses: crazy-max/ghaction-github-pages@v4
         with:
@@ -30,14 +26,12 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
       - name: Update Blog Posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           max_post_count: 5
-          feed_list: "https://dev.to/feed/imnexerio"  # Replace with your actual blog feed URL
+          feed_list: "https://dev.to/feed/nexerio"  # Modified username (removed "im")
           comment_tag_name: "BLOG-POST-LIST"
-
       - name: Commit and push if changed
         run: |
           git config --global user.name 'github-actions[bot]'
