@@ -1,7 +1,7 @@
 import os
 import re
 from github import Github
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Get GitHub token from environment variable
 github_token = os.environ.get("GITHUB_TOKEN")
@@ -11,7 +11,8 @@ g = Github(github_token)
 def get_recent_repos(user, days=30):
     """Get repositories the user has been active in recently"""
     user_obj = g.get_user(user)
-    recent_date = datetime.now() - timedelta(days=days)
+    # Create an offset-aware datetime for proper comparison
+    recent_date = datetime.now(timezone.utc) - timedelta(days=days)
 
     # Get user's repositories
     repos = user_obj.get_repos()
@@ -77,8 +78,13 @@ def update_readme(user):
     ])
 
     # Read the current README
-    with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
+    try:
+        with open("README.md", "r", encoding="utf-8") as f:
+            content = f.read()
+    except FileNotFoundError:
+        # Create a basic README if it doesn't exist
+        content = f"# {user}\n\n<!-- CURRENT-WORK:START -->\n<!-- CURRENT-WORK:END -->"
+        print("README.md not found. Creating a basic one.")
 
     # Replace the current work section
     start_marker = "<!-- CURRENT-WORK:START -->"
@@ -88,11 +94,19 @@ def update_readme(user):
 
     # Find and replace the section using regex
     pattern = f"{re.escape(start_marker)}(.*?){re.escape(end_marker)}"
-    updated_content = re.sub(pattern, new_section, content, flags=re.DOTALL)
+    
+    if re.search(pattern, content, flags=re.DOTALL):
+        updated_content = re.sub(pattern, new_section, content, flags=re.DOTALL)
+    else:
+        # If markers don't exist, append the section
+        updated_content = content + f"\n\n{new_section}"
+        print("Markers not found in README. Appending section.")
 
     # Write the updated content back to README.md
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(updated_content)
+    
+    print("README.md updated successfully!")
 
 
 if __name__ == "__main__":
