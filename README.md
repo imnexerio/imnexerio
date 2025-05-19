@@ -20,14 +20,14 @@ I believe in the power of technology to transform lives and am excited to bring 
 <!-- BLOG-POST-LIST:END -->
 
 <!-- CURRENT-WORK:START -->
-- 🔭 I'm currently working on a financial transaction management app using Flask and Android.
-- 🌱 I'm currently learning advanced Kotlin and backend optimization techniques.
+- 🔭 I'm currently working on `Avrio-Energy`, `EyerisAndroid`, `imnexerio`
+- 🌱 I'm currently learning vue
 - 👯 I'm looking to collaborate on innovative tech projects, especially in the realms of AI and ML.
 - 🤔 I'm looking for help with scaling Flask applications.
 - 💬 Ask me about full stack development, machine learning, or any of my projects.
 - 📫 How to reach me: [Your Contact Information]
 - 😄 Pronouns: [Your Pronouns]
-- ⚡ Fun fact: I recently finished watching the TV show 'Silo.'
+- ⚡ Fun fact: Updated on May 19, 2025!
 <!-- CURRENT-WORK:END -->
 
 Feel free to explore my repositories and connect with me!
