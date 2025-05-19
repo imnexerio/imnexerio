@@ -26,12 +26,6 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Update Blog Posts
-        uses: gautamkrishnar/blog-post-workflow@v1
-        with:
-          max_post_count: 5
-          feed_list: "https://dev.to/feed/nexerio"  # Modified username (removed "im")
-          comment_tag_name: "BLOG-POST-LIST"
       - name: Commit and push if changed
         run: |
           git config --global user.name 'github-actions[bot]'
