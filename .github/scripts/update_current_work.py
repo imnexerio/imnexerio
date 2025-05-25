@@ -104,8 +104,6 @@ def update_readme(user):
             "- 👯 I'm looking to collaborate on innovative tech projects, especially in the realms of AI and ML.",
             "- 🤔 I'm looking for help with scaling Flask applications.",
             "- 💬 Ask me about full stack development, machine learning, or any of my projects.",
-            "- 📫 How to reach me: [Your Contact Information]",
-            "- 😄 Pronouns: [Your Pronouns]",
             f"- ⚡ Fun fact: Updated on {datetime.now().strftime('%B %d, %Y')}!"
         ])
 
