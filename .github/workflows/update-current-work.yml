@@ -1,24 +1,24 @@
 name: Update GitHub Profile
-
 on:
   schedule:
-    - cron: '0 0 * * 1'  # Runs at midnight every Monday
+    - cron: '0 0 * * *'  # Runs daily at midnight
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  update-readme:
-    name: Update Profile README
+  update-profile:
+    name: Update GitHub Profile
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Setup Python for running our scripts
+      # Setup Python for running scripts
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -30,24 +30,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyGithub
 
-      # Update current work section
+      # Update current work section (if script exists)
       - name: Update Current Work Section
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python .github/scripts/update_current_work.py
-
-      # Generate GitHub stats
-      - name: Update GitHub Stats
-        uses: anuraghazra/github-readme-stats@master
-        with:
-          username: ${{ github.repository_owner }}
-          show_icons: true
-          count_private: true
-          theme: dark
-          include_all_commits: true
-          hide_border: false
-          token: ${{ secrets.GH_TOKEN }}
+          if [ -f .github/scripts/update_current_work.py ]; then
+            python .github/scripts/update_current_work.py
+          else
+            echo "update_current_work.py not found, skipping..."
+          fi
 
       # Generate Snake Animation
       - name: Generate Snake Animation
@@ -58,21 +50,24 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # Deploy Snake Animation to the output branch
-      - name: Push Snake Animation
+      # Deploy Snake Animation to output branch
+      - name: Deploy Snake Animation
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Commit and push changes
-      - name: Commit and push if changed
+      # Commit any README changes
+      - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git add dist/
-          git commit -m "Update GitHub profile" -a || echo "No changes to commit"
-          git push "https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+          git add -A
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 Update GitHub profile [automated]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
