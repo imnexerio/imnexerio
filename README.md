@@ -38,11 +38,13 @@ Feel free to explore my repositories and connect with me!
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=imnexerio&theme=github-dark&hide_border=true)
 
 ## 🐍 Contribution Snake
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imnexerio/imnexerio/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imnexerio/imnexerio/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/imnexerio/imnexerio/output/github-contribution-grid-snake.svg">
-</picture>
+<div align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imnexerio/imnexerio/output/github-contribution-grid-snake-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imnexerio/imnexerio/output/github-contribution-grid-snake.svg">
+      <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/imnexerio/imnexerio/output/github-contribution-grid-snake.svg">
+    </picture>
+</div>
 
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=imnexerio&limit=5&theme=dark&combine_all_yearly_contributions=true)
