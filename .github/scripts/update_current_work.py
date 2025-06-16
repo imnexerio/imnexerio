@@ -102,9 +102,9 @@ def update_readme(user):
         # Keep other static lines
         current_work_lines.extend([
             "- 👯 I'm looking to collaborate on innovative tech projects, especially in the realms of AI and ML.",
-            "- 🙂 I love watching cinema and reading books.",
+            "- 🙂 Watching cinema and reading books sounds like me.",
             "- 💬 Ask me about full stack development, machine learning, or any of my projects.",
-            f"- ⚡ Fun fact: Updated on {datetime.now().strftime('%B %d, %Y')}!"
+            f"- ⚡ Fun fact: I updated myself on {datetime.now().strftime('%B %d, %Y')}!"
         ])
 
         # Read the current README
