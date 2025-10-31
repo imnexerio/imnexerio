@@ -11,11 +11,11 @@ I believe in the power of technology to transform lives and am excited to bring 
 
 <!-- CURRENT-WORK:START -->
 - 🔭 I'm currently working on `EyerisAndroid`, `eyeris_customtkinter`, `i2Step`
-- 🌱 I'm currently learning kotlin, python, dart
+- 🌱 I'm currently learning javascript, kotlin, python
 - 👯 I'm looking to collaborate on innovative tech projects, especially in the realms of AI and ML.
 - 🙂 Watching cinema and reading books sounds like me.
 - 💬 Ask me about full stack development, machine learning, or any of my projects.
-- ⚡ Fun fact: I updated myself on October 30, 2025!
+- ⚡ Fun fact: I updated myself on October 31, 2025!
 <!-- CURRENT-WORK:END -->
 
 Feel free to explore my repositories and connect with me!
