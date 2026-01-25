@@ -10,12 +10,12 @@ I believe in the power of technology to transform lives and am excited to bring 
 <!-- BLOG-POST-LIST:END -->
 
 <!-- CURRENT-WORK:START -->
-- 🔭 I'm currently working on `deskreen`, `Eyeris`, `i2Step`
-- 🌱 I'm currently learning kotlin, dart, javascript
+- 🔭 I'm currently working on `deskreen`, `imnexerio`, `revix`
+- 🌱 I'm currently learning dart
 - 👯 I'm looking to collaborate on innovative tech projects, especially in the realms of AI and ML.
 - 🙂 Watching cinema and reading books sounds like me.
 - 💬 Ask me about full stack development, machine learning, or any of my projects.
-- ⚡ Fun fact: I updated myself on January 24, 2026!
+- ⚡ Fun fact: I updated myself on January 25, 2026!
 <!-- CURRENT-WORK:END -->
 
 Feel free to explore my repositories and connect with me!
