@@ -10,12 +10,12 @@ I believe in the power of technology to transform lives and am excited to bring 
 <!-- BLOG-POST-LIST:END -->
 
 <!-- CURRENT-WORK:START -->
-- 🔭 I'm currently working on `imnexerio`, `Loop`
-- 🌱 I'm currently learning typescript
+- 🔭 I'm currently working on `imnexerio`, `McGraw-Hill-Education-ePub`, `revix`
+- 🌱 I'm currently learning javascript, dart
 - 👯 I'm looking to collaborate on innovative tech projects, especially in the realms of AI and ML.
 - 🙂 Watching cinema and reading books sounds like me.
 - 💬 Ask me about full stack development, machine learning, or any of my projects.
-- ⚡ Fun fact: I updated myself on July 13, 2026!
+- ⚡ Fun fact: I updated myself on July 14, 2026!
 <!-- CURRENT-WORK:END -->
 
 Feel free to explore my repositories and connect with me!
